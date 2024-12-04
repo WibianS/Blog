@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light">
+  <div>
+    <a class="navbar-brand" routerLink="home">HOME</a>
+  </div>
+  <div class="text-right">
+    <a *ngIf="!id" class="navbar-brand" routerLink="login">Inicia Sesión</a>
+    <a *ngIf="id" class="navbar-brand" (click)="cerrar()">Cerrar Sesión</a>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form  class="formulario" (ngSubmit)="LogIn()">
+        <div class="form-group">      
+          <input type="user" [(ngModel)]="mail" name="mail" class="form-control form-control-md" placeholder="Correo">
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="password" name="password" class="form-control form-control-md" placeholder="Contraseña">   
+        </div>
+        <button class="btn btn-primary">Inicia Sesión</button>
+      </form>
+    </div>
+  </div>  
+</div>
